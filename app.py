@@ -34,7 +34,7 @@ def length():
 
 
 @app.route("/weight", methods=['GET', 'POST'])
-def temperature():
+def weight():
     result = None
     destiny_unit = ""
 
@@ -48,12 +48,12 @@ def temperature():
         if origin == "kg":
             base_kg = value
         elif origin == "lb":
-            base_kg = value / 2.205
+            base_kg = value / 2.20462
         
         if destiny == "kg":
             result = base_kg
         elif destiny == "lb":
-            result = base_kg * 2.205
+            result = base_kg * 2.20462
         
         destiny_unit = destiny
     
@@ -77,7 +77,7 @@ def temperature():
         if origin == "f":
             base_fahrenheit = value
         elif origin == "c":
-            base_fahrenheit = (value * (9/5)) + (5/9)
+            base_fahrenheit = (value * 9/5) + 32
         
         if destiny == "f":
             result = base_fahrenheit 
