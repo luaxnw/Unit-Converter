@@ -4,49 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Length</title>
 </head>
 
 <body>
-    <h1>Unit Converter</h1>
-    <table>
-        <tr>
-            <td>
-                <h2>Length</h2>
+    <div class="container">
+        <h1>Unit Converter</h1>
+        <table>
+            <tr>
+                <td>
+                    <h2>Length</h2>
 
-            </td>
-            <td>
-                <h2><a href="{{ url_for('weight') }}">Weight</a></h2>
-            </td>
-            <td>
-                <h2><a href="{{ url_for('temperature') }}">Temperature</a></h2>
-            </td>
-        </tr>
-    </table>
+                </td>
+                <td>
+                    <h2><a href="{{ url_for('weight') }}">Weight</a></h2>
+                </td>
+                <td>
+                    <h2><a href="{{ url_for('temperature') }}">Temperature</a></h2>
+                </td>
+            </tr>
+        </table>
 
-    <form method="POST">
-        <label>Enter the length to convert</label>
-        <input type="number" name="value" step="any" required> <label>Unit to Convert from</label>
-        <select name="origin_unit">
-            <option value="ft">Feets (ft)</option>
-            <option value="m">Meters (m)</option>
-        </select>
+        <form method="POST">
+            <label>Enter the length to convert</label>
+            <input type="number" name="value" step="any" required> <label>Unit to Convert from</label>
+            <select name="origin_unit">
+                <option value="ft">Feets (ft)</option>
+                <option value="m">Meters (m)</option>
+            </select>
 
-        <label>Unit to Convert to</label>
-        <select name="destiny_unit">
-            <option value="ft">Feets (ft)</option>
-            <option value="m">Meters (m)</option>
-        </select>
+            <label>Unit to Convert to</label>
+            <select name="destiny_unit">
+                <option value="ft">Feets (ft)</option>
+                <option value="m">Meters (m)</option>
+            </select>
 
-        <button type="submit">Convert</button>
-    </form>
+            <button type="submit">Convert</button>
+        </form>
 
-    {% if result %}
-    <h3>Result: {{ result }} {{ destiny }}</h3>
-    {% endif %}
+        {% if result %}
+        <h3>Result: {{ result }} {{ destiny }}</h3>
+        {% endif %}
 
-
-
+    </div>
 </body>
 
 </html>

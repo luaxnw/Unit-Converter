@@ -4,46 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Temperature</title>
 </head>
 
 <body>
-    <h1>Unit Converter</h1>
-    <table>
-        <tr>
-            <td>
-                <h2><a href="{{ url_for('length') }}">Length</a></h2>
-            </td>
-            <td>
-                <h2><a href="{{ url_for('weight') }}">Weight</a></h2>
-            </td>
-            <td>
-                <h2>Temperature</h2>
-            </td>
-        </tr>
-    </table>
+    <div class="container">
+        <h1>Unit Converter</h1>
+        <table>
+            <tr>
+                <td>
+                    <h2><a href="{{ url_for('length') }}">Length</a></h2>
+                </td>
+                <td>
+                    <h2><a href="{{ url_for('weight') }}">Weight</a></h2>
+                </td>
+                <td>
+                    <h2>Temperature</h2>
+                </td>
+            </tr>
+        </table>
 
-    <form method="POST">
-        <label>Enter the Temperature to convert</label>
-        <input type="number" name="value" step="any" required> <label>Unit to Convert from</label>
-        <select name="origin_unit">
-            <option value="f">Fahrenheit (°F)</option>
-            <option value="c">Celsius (°C)</option>
-        </select>
+        <form method="POST">
+            <label>Enter the Temperature to convert</label>
+            <input type="number" name="value" step="any" required> <label>Unit to Convert from</label>
+            <select name="origin_unit">
+                <option value="f">Fahrenheit (°F)</option>
+                <option value="c">Celsius (°C)</option>
+            </select>
 
-        <label>Unit to Convert to</label>
-        <select name="destiny_unit">
-            <option value="f">Fahrenheit (°F)</option>
-            <option value="c">Celsius (°C)</option>
-        </select>
+            <label>Unit to Convert to</label>
+            <select name="destiny_unit">
+                <option value="f">Fahrenheit (°F)</option>
+                <option value="c">Celsius (°C)</option>
+            </select>
 
-        <button type="submit">Convert</button>
-    </form>
+            <button type="submit">Convert</button>
+        </form>
 
-    {% if result %}
-    <h3>Result: {{ result }} {{ destiny }}</h3>
-    {% endif %}
+        {% if result %}
+        <h3>Result: {{ result }} {{ destiny }}</h3>
+        {% endif %}
 
+    </div>
 </body>
 
 </html>
